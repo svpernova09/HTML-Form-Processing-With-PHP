@@ -1,0 +1,5 @@
+{
+    "require": {
+        "components/bootstrap-default": "2.3.2"
+    }
+}
