@@ -47,22 +47,22 @@ require '../vendor/autoload.php';
 
 <div class="container">
 
-    <h1>Basic HTML Form</h1>
+    <h1>Code Exaples</h1>
     <div class="row-fluid marketing">
         <div class="span6">
             <h4><a href="/examples/01-Basic-HTML-Form/">01 - Basic HTML Form</a></h4>
             <p>The starting point. Very simple HTML form handled by PHP.</p>
 
-            <h4>Subheading</h4>
-            <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+            <h4><a href="/examples/02-Sanitizing-Data/">02 - Sanitizing Data</a></h4>
+            <p>Sanitize your data to prevent any maliciousness your users may be up to.</p>
 
-            <h4>Subheading</h4>
-            <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+            <h4><a href="/examples/03-Validating-Data/">03 - Validating Data</a></h4>
+            <p>Validate your data so it is in the form and type you are expecting.</p>
         </div>
 
         <div class="span6">
-            <h4>Subheading</h4>
-            <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+            <h4><a href="/examples/05-Creative-Human-Checking/">05 - Creative Human Checking</a></h4>
+            <p>Web based pulse check? Maybe...</p>
 
             <h4>Subheading</h4>
             <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
