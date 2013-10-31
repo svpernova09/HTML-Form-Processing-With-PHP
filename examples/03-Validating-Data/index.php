@@ -68,9 +68,9 @@ require '../../vendor/autoload.php';
         echo $email_message;
     } else {
         ?>
-        <h1>Sanitizing Data</h1>
+        <h1>Validating Data</h1>
         <form name="basic_form" id="basic_form" method="POST" action="#">
-            <label for="salutation">Salutation:
+            <label>Salutation:
                 <select name="salutation" id="salutation">
                     <option value="Miss">Miss</option>
                     <option value="Mrs.">Mrs.</option>
@@ -79,16 +79,16 @@ require '../../vendor/autoload.php';
                     <option value="Dr.">Dr.</option>
                 </select>
             </label>
-            <label for="name">Name:
+            <label>Name:
                 <input type="text" name="name" id="name" value="">
             </label>
-            <label for="age">Age:
+            <label>Age:
                 <input type="text" name="age" id="age" value="">
             </label>
-            <label for="email">Email:
+            <label>Email:
                 <input type="text" name="email" id="email" value="">
             </label>
-            <label for="submit">
+            <label>
                 <input type="submit" id="submit" value="Submit">
             </label>
         </form>

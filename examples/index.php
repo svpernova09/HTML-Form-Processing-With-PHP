@@ -61,14 +61,12 @@ require '../vendor/autoload.php';
         </div>
 
         <div class="span6">
+            <h4><a href="/examples/04-Ajax-Form-Handling/">04 - Ajax Form Handling</a></h4>
+            <p>Using Ajax to handle forms...</p>
+
             <h4><a href="/examples/05-Creative-Human-Checking/">05 - Creative Human Checking</a></h4>
-            <p>Web based pulse check? Maybe...</p>
+            <p>What does the cat say...</p>
 
-            <h4>Subheading</h4>
-            <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-            <h4>Subheading</h4>
-            <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
         </div>
     </div>
 </div> <!-- /container -->

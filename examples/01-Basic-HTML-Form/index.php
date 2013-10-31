@@ -51,10 +51,10 @@ require '../../vendor/autoload.php';
         ?>
         <h1>Basic HTML Form</h1>
         <form name="basic_form" id="basic_form" method="POST" action="#">
-            <label for="name">Name:
+            <label>Name:
                 <input type="text" name="name" id="name" value="">
             </label>
-            <label for="submit">
+            <label>
                 <input type="submit" id="submit" value="Submit">
             </label>
         </form>
