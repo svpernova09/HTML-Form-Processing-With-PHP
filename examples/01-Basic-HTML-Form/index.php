@@ -45,7 +45,7 @@ require '../../vendor/autoload.php';
     if(isset($_POST['name'])){
         //form has been submitted
         ?>
-        Hello <?php echo htmlentities($_POST['name']); ?>
+        Hello <?php echo $_POST['name']; ?>
         <?php
     } else {
         ?>
