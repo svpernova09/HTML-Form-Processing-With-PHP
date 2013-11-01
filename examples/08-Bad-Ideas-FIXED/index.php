@@ -1,24 +1,27 @@
-<?
-// For Example only. Don't run this.
-/*
-  include("../includes/fmGlobals.php");
+<?php
+include("../includes/fmGlobals.php");
+$id = htmlentities($_REQUEST["id"]);
+$userid = htmlentities($_REQUEST["userid"]);
+$unixtime = time();
+$date = date('d-m-Y');
+$localtime = date('G:H:s');
+$dbh = new PDO('mysql:host=localhost;dbname=test', $user, $pass);
 
-  OpenConnection($hostName,$userName,$password,$database);
+$stmt = $dbh->prepare("INSERT INTO fmDownloads (DocID, UserID, DLUnix, DLDate, DLTime)
+                        VALUES (:DocID, :UserID, :DLUnix, :DLDate, :DLTime)");
 
-  $SQL = "INSERT INTO fmDownloads (DocID, UserID, DLUnix, DLDate, DLTime)
-            VALUES (" . $_REQUEST["id"] . ",
-                    " . $_REQUEST["userid"] . ",
-                    " . time() . ",
-                    '" . WriteDate(StraightDate(localtime())) . "',
-                    '" . GetTime(localtime()) . "')";
-  DoQuery1($SQL);
+$params = array(':DocID' => $id,
+                ':UserID' => $userid,
+                ':DLUnix' => $unixtime,
+                ':DLDate' => $date,
+                ':DLTime' => $localtime);
+$stmt->execute($params);
 
-  $SQL = "SELECT DocFile FROM fmDocuments WHERE ID = " . $_REQUEST["id"];
-  $RS = mysql_fetch_array(DoQuery1($SQL));
+$stmt2 = $dbh->prepare("SELECT DocFile FROM fmDocuments WHERE ID = :id");
+$params2 = array(':DocID' => $id);
+$stmt2->execute($params2);
+$data = $stmt2->fetchAll();
 
-  $rd = "Location: ../documents/" . trim($RS["DocFile"]);
-
-  CloseAll();
-  header($rd);
-*/
+$redirect = "Location: ../documents/" . trim($data['0']["DocFile"]);
+header($redirect);
 ?>

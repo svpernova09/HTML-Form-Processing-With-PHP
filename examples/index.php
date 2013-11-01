@@ -76,8 +76,6 @@ require '../vendor/autoload.php';
             <h4>08 - Bad Ideas FIXED</a></h4>
             <p>Don't run this code, just see why it's better</p>
 
-
-
         </div>
     </div>
 </div> <!-- /container -->

@@ -66,9 +66,6 @@ require '../../vendor/autoload.php';
                 <input type="checkbox" name="newsletter" id="newsletter" value="yes" checked="checked">
                 I would like to get email updates
             </label>
-            <label for="human_check">What does the cat say? (Rhymes with Cow):<br />
-                <input type="text" name="human_check" id="human_check" value="">
-            </label>
             <label>
                 <input type="submit" id="submit" value="Submit">
             </label>
