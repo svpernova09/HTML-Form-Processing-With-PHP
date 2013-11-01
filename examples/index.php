@@ -58,14 +58,25 @@ require '../vendor/autoload.php';
 
             <h4><a href="/examples/03-Validating-Data/">03 - Validating Data</a></h4>
             <p>Validate your data so it is in the form and type you are expecting.</p>
+
+            <h4><a href="/examples/04-Ajax-Form-Handling/">04 - Ajax Form Handling</a></h4>
+            <p>Using Ajax to handle forms...</p>
         </div>
 
         <div class="span6">
-            <h4><a href="/examples/04-Ajax-Form-Handling/">04 - Ajax Form Handling</a></h4>
-            <p>Using Ajax to handle forms...</p>
-
             <h4><a href="/examples/05-Creative-Human-Checking/">05 - Creative Human Checking</a></h4>
             <p>What does the cat say...</p>
+
+            <h4>06 - Bad Ideas</h4>
+            <p>Don't run this code</p>
+
+            <h4><a href="/examples/07-Newsletter-Signup/">07 - Newsletter Signup</a></h4>
+            <p>Making people give you their email...</p>
+
+            <h4>08 - Bad Ideas FIXED</a></h4>
+            <p>Don't run this code, just see why it's better</p>
+
+
 
         </div>
     </div>
