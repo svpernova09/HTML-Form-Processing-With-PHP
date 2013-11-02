@@ -1,7 +1,8 @@
 <?php
 if(isset($_POST['name'])){
     //form has been submitted
-    if(htmlentities($_POST['human_check']) == 'meow'){
+    $human = filter_var($_POST['human_check'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
+    if($human == 'meow'){
         $newsletter = filter_var($_POST['newsletter'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
         if($newsletter == 'yes'){
             //add them to our email list
