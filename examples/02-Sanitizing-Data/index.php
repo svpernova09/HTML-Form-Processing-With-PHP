@@ -44,8 +44,8 @@ require '../../vendor/autoload.php';
     <?php
     if(isset($_POST['name'])){
         //form has been submitted
-        $salutation = htmlentities($_POST['salutation']);
-        $name = htmlentities($_POST['name']);
+        $salutation = filter_var($_POST['salutation'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
+        $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
         $greeting = 'Hello ' . $salutation . ' ' . $name;
         echo $greeting;
     } else {

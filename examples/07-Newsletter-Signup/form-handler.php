@@ -2,13 +2,13 @@
 if(isset($_POST['name'])){
     //form has been submitted
     if(htmlentities($_POST['human_check']) == 'meow'){
-        $newsletter = htmlentities($_POST['newsletter']);
+        $newsletter = filter_var($_POST['newsletter'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
         if($newsletter == 'yes'){
             //add them to our email list
         }
-        $salutation = htmlentities($_POST['salutation']);
-        $name = htmlentities($_POST['name']);
-        $age = htmlentities($_POST['age']);
+        $salutation = filter_var($_POST['salutation'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
+        $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
+        $age = filter_var($_POST['age'], FILTER_SANITIZE_NUMBER_INT);
         $age_filter = filter_var($age, FILTER_VALIDATE_INT,
             array('options'=>array('min_range'=>'13','max_range'=>'110')));
         if($age_filter){
@@ -16,7 +16,7 @@ if(isset($_POST['name'])){
         } else {
             $age_message = "We don't know how old you are.<br />";
         }
-        $email = htmlentities($_POST['email']);
+        $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
         $filter_email = filter_var($email,FILTER_VALIDATE_EMAIL);
         if($filter_email){
             $email_message = 'Your email is ' . $email . '<br />';
