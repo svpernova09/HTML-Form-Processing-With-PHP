@@ -41,60 +41,60 @@ require '../../vendor/autoload.php';
 </div>
 
 <div class="container">
-    <?php
-    if(isset($_POST['name'])){
-        //form has been submitted
-        $salutation = filter_var($_POST['salutation'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
-        $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
-        $age = filter_var($_POST['age'], FILTER_SANITIZE_NUMBER_INT);
-        $age_filter = filter_var($age, FILTER_VALIDATE_INT,
-          array('options'=>array('min_range'=>'13','max_range'=>'110')));
-        if($age_filter){
-            $age_message = 'You are ' . $age . ' years old.<br />';
-        } else {
-            $age_message = "We don't know how old you are.<br />";
-        }
-        $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-        $filter_email = filter_var($email,FILTER_VALIDATE_EMAIL);
-        if($filter_email){
-            $email_message = 'Your email is ' . $email . '<br />';
-        } else {
-            $email_message = "We don't know your email.<br />";
-        }
-        $greeting = 'Hello ' . $salutation . ' ' . $name . '<br />';
-
-        echo $greeting;
-        echo $age_message;
-        echo $email_message;
+<?php
+if(isset($_POST['name'])){
+    //form has been submitted
+    $salutation = filter_var($_POST['salutation'], FILTER_SANITIZE_STRING);
+    $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
+    $age = filter_var($_POST['age'], FILTER_SANITIZE_NUMBER_INT);
+    $age_filter = filter_var($age, FILTER_VALIDATE_INT,
+      array('options'=>array('min_range'=>'13','max_range'=>'110')));
+    if($age_filter){
+        $age_message = 'You are ' . $age . ' years old.<br />';
     } else {
-        ?>
-        <h1>Validating Data</h1>
-        <form name="basic_form" id="basic_form" method="POST" action="#">
-            <label>Salutation:
-                <select name="salutation" id="salutation">
-                    <option value="Miss">Miss</option>
-                    <option value="Mrs.">Mrs.</option>
-                    <option value="Ms.">Ms.</option>
-                    <option value="Mr.">Mr.</option>
-                    <option value="Dr.">Dr.</option>
-                </select>
-            </label>
-            <label>Name:
-                <input type="text" name="name" id="name" value="">
-            </label>
-            <label>Age:
-                <input type="text" name="age" id="age" value="">
-            </label>
-            <label>Email:
-                <input type="text" name="email" id="email" value="">
-            </label>
-            <label>
-                <input type="submit" id="submit" value="Submit">
-            </label>
-        </form>
-        <?php
+        $age_message = "We don't know how old you are.<br />";
     }
+    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+    $filter_email = filter_var($email,FILTER_VALIDATE_EMAIL);
+    if($filter_email){
+        $email_message = 'Your email is ' . $email . '<br />';
+    } else {
+        $email_message = "We don't know your email.<br />";
+    }
+    $greeting = 'Hello ' . $salutation . ' ' . $name . '<br />';
+
+    echo $greeting;
+    echo $age_message;
+    echo $email_message;
+} else {
     ?>
+    <h1>Validating Data</h1>
+    <form name="basic_form" id="basic_form" method="POST" action="#">
+        <label>Salutation:
+            <select name="salutation" id="salutation">
+                <option value="Miss">Miss</option>
+                <option value="Mrs.">Mrs.</option>
+                <option value="Ms.">Ms.</option>
+                <option value="Mr.">Mr.</option>
+                <option value="Dr.">Dr.</option>
+            </select>
+        </label>
+        <label>Name:
+            <input type="text" name="name" id="name" value="">
+        </label>
+        <label>Age:
+            <input type="text" name="age" id="age" value="">
+        </label>
+        <label>Email:
+            <input type="text" name="email" id="email" value="">
+        </label>
+        <label>
+            <input type="submit" id="submit" value="Submit">
+        </label>
+    </form>
+    <?php
+}
+?>
 </div> <!-- /container -->
 
 <!-- Le javascript

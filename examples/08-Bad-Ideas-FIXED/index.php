@@ -24,4 +24,3 @@ $data = $stmt2->fetchAll();
 
 $redirect = "Location: ../documents/" . trim($data['0']["DocFile"]);
 header($redirect);
-?>
