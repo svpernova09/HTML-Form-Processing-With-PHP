@@ -1,24 +1,23 @@
 <?
-// For Example only. Don't run this.
-/*
-  include("../includes/fmGlobals.php");
+include("../includes/fmGlobals.php");
 
-  OpenConnection($hostName,$userName,$password,$database);
+OpenConnection($hostName,$userName,$password,$database);
 
-  $SQL = "INSERT INTO fmDownloads (DocID, UserID, DLUnix, DLDate, DLTime)
-            VALUES (" . $_REQUEST["id"] . ",
-                    " . $_REQUEST["userid"] . ",
-                    " . time() . ",
-                    '" . WriteDate(StraightDate(localtime())) . "',
-                    '" . GetTime(localtime()) . "')";
-  DoQuery1($SQL);
+$SQL = "INSERT INTO fmDownloads (DocID, UserID, DLUnix, DLDate, DLTime)
+        VALUES (" . $_REQUEST["id"] . ",
+                " . $_REQUEST["userid"] . ",
+                " . time() . ",
+                '" . WriteDate(StraightDate(localtime())) . "',
+                '" . GetTime(localtime()) . "')";
+DoQuery1($SQL);
 
-  $SQL = "SELECT DocFile FROM fmDocuments WHERE ID = " . $_REQUEST["id"];
-  $RS = mysql_fetch_array(DoQuery1($SQL));
+$SQL = "SELECT DocFile FROM fmDocuments WHERE ID = " . $_REQUEST["id"];
+$RS = mysql_fetch_array(DoQuery1($SQL));
 
-  $rd = "Location: ../documents/" . trim($RS["DocFile"]);
+$rd = "Location: ../documents/" . trim($RS["DocFile"]);
 
-  CloseAll();
-  header($rd);
-*/
-?>
+CloseAll();
+header($rd);
+
+
+
